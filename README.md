@@ -160,4 +160,5 @@ Thanks! :heart:
 I would like to acknowledge the following projects for inspiration:
 
 https://github.com/bubbajames-docker/sendy
+
 https://chris-vermeulen.com/using-gitlab-registry-with-kubernetes/
