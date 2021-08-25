@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: newsletters
+  name: 'newsletters-production-domain'
+  labels:
+    app: 'newsletters-production-domain'
+    tier: 'frontend'
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: 'newsletters-production-domain'
+  template:
+    metadata:
+      labels:
+        app: 'newsletters-production-domain'
+    spec:
+      containers:
+      - name: newsletters-production-domain-container
+        image: gitlab.gitlabdomain.com:5050/path/to/sendy-repo:5.2.3     
+        imagePullPolicy: Always  
+        ports:
+        - containerPort: 80
+        envFrom:
+          - secretRef:
+               name: newsletters-secret-production
+      imagePullSecrets: 
+      - name: registry-credentials
+  
+

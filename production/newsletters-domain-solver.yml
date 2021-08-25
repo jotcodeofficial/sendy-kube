@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: newsletters-domain-com
+  namespace: newsletters
+spec:
+  secretName: newsletters-domain-com-tls
+  issuerRef:
+    name: newsletters-domain-issuer
+    kind: Issuer
+  commonName: newsletters.domain.com
+  dnsNames:
+  - newsletters.domain.com

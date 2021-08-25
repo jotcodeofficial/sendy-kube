@@ -1,0 +1,10 @@
+{
+    "auths": {
+        "https://gitlab.gitlabdomain.com:5050/path/to/sendy-repo":{
+            "username":"mCRjrGlpvCbp",
+            "password":"jKtZjKaAzicWoKeAzinADX",
+            "email":"qkYRLAtQHsAEYddRMPtyDlNb=",
+            "auth":"LDoTxrsgBIfvlBDkbDTYUPuRkqtsgW"
+    	}
+    }
+}

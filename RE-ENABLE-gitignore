@@ -1,0 +1,8 @@
+/staging/newsletters-secret-staging.yml
+/staging/.staging-docker-config.json
+/staging/staging-registry-credentials.yml
+/production/newsletters-secret-production.yml
+/production/.production-docker-config.json
+/production/production-registry-credentials.yml
+
+You can re-enable this file by renaming it to: .gitignore (this remove this line)

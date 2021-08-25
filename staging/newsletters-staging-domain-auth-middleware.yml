@@ -1,0 +1,10 @@
+# Declaring the user list
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  namespace: newsletters
+  name: newsletters-staging-domain-auth-middleware
+spec:
+  basicAuth:
+    secret: newsletters-staging-domain-auth-secret
+

@@ -1,0 +1,28 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  namespace: newsletters
+  name: newsletters-staging-domain-secure-ingress-route
+annotations:
+  kubernetes.io/ingress.class: "traefik"
+  cert-manager.io/issuer: newsletters-staging-domain-issuer
+  traefik.ingress.kubernetes.io/router.entrypoints: websecure
+  traefik.frontend.redirect.entryPoint: https
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`newsletters.staging.domain.com`)
+      kind: Rule
+      services:
+        - name: newsletters-staging-domain
+          namespace: newsletters
+          port: 80
+  tls:
+    domains:                      
+    - main: newsletters.staging.domain.com
+    options:
+      namespace: newsletters
+    secretName: newsletters-staging-domain-com-tls
+
+
